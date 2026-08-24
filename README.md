@@ -82,4 +82,4 @@ pip install requests beautifulsoup4 pandas
 ![Car Dataset Screenshot](assets/Screenshot_2026-08-25_010128.png)
 
 >[!NOTE]
->This script connects to a designated [web scraping demo platform sandbox](webscraper.io/test-sites/pagination). All data objects, pricing numbers, and luxury model metrics are fictional, synthesized strictly for analytics testing and software simulation validation purposes.
+>This script connects to a designated [web scraping demo platform sandbox](https://webscraper.io/test-sites/pagination?page=1). All data objects, pricing numbers, and luxury model metrics are fictional, synthesized strictly for analytics testing and software simulation validation purposes.
