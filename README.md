@@ -79,7 +79,7 @@ pip install requests beautifulsoup4 pandas
 * main.py - Core execution script containing retrieval algorithms and EDA code blocks.
 * Car Dataset - Raw generated flat CSV output holding parsed vehicle entries.
 
-![Car Dataset Screenshot]()
+![Car Dataset Screenshot](assets/Screenshot_2026-08-25_010128.png)
 
 >[!NOTE]
 >This script connects to a designated [web scraping demo platform sandbox](webscraper.io/test-sites/pagination). All data objects, pricing numbers, and luxury model metrics are fictional, synthesized strictly for analytics testing and software simulation validation purposes.
