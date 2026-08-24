@@ -74,3 +74,69 @@ df[['Availability', 'Number of Available']] = df['Availability_Status'].str.spli
 
 #Saving into a CSV File
 df.to_csv('Car Dataset')
+
+
+#Exploring the Dataset
+
+#Creating another DataFrame
+df1 = pd.read_csv("Car Dataset")
+
+#High-level information about the Dataset
+print(df1.info())
+
+#Number of Records Collected
+number_of_records = len(df1)
+print("Total records collected:", number_of_records)
+
+#Unique Records
+unique_vehicles = df1["Title"].nunique()
+print("Number of unique vehicles:", unique_vehicles)
+
+#Duplicate Records
+duplicates = df1["Title"].duplicated().sum()
+print("Duplicate vehicle records:", duplicates)
+
+
+#Coverting price from str to float and replacing spaces between them into commas
+df1["Price"] = (
+    df1["Price"]
+    .astype(str)
+    .str.replace(" ", "", regex=False)
+)
+
+df1["Price"] = pd.to_numeric(df1["Price"], errors="coerce")
+
+df1["Mileage"] = (
+    df1["Mileage"]
+    .astype(str)
+    .str.replace(" ", "", regex=False)
+    .str.replace("km", "", regex=False)
+)
+
+df1["Mileage"] = pd.to_numeric(df1["Mileage"], errors="coerce")
+
+#Average Price
+average_price = df1["Price"].mean()
+print(f"Average price: ₹{average_price:,.2f}")
+
+#Min-Max Price
+minimum_price = df1["Price"].min()
+maximum_price = df1["Price"].max()
+print(f"Minimum price: ₹{minimum_price:,.2f}")
+print(f"Maximum price: ₹{maximum_price:,.2f}")
+print(f"Price range: ₹{minimum_price:,.2f} - ₹{maximum_price:,.2f}")
+
+#Average Rating
+average_rating = df1["Rating"].mean()
+print(f"Average rating: {average_rating:.2f}")
+
+print("========== DATASET SUMMARY ==========")
+
+print(f"Total records collected : {len(df1)}")
+print(f"Unique vehicles         : {df1['Title'].nunique()}")
+print(f"Average price           : ₹{df1['Price'].mean():,.2f}")
+print(f"Minimum price           : ₹{df1['Price'].min():,.2f}")
+print(f"Maximum price           : ₹{df1['Price'].max():,.2f}")
+print(f"Average rating          : {df1['Rating'].mean():.2f}")
+
+print("======================================")
